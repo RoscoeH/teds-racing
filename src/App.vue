@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <RaceItem meetingName="Capalaba" raceNumber="5" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import RaceItem from "./components/RaceItem.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    RaceItem,
   },
 };
 </script>
