@@ -15,8 +15,8 @@ import FilterItem from "./FilterItem";
 export default {
   components: { FilterItem },
   props: {
-    activeIndex: {
-      type: Number,
+    selected: {
+      type: String,
     },
     values: {
       type: Array,
@@ -28,9 +28,9 @@ export default {
   },
   computed: {
     items: function () {
-      return this.values.map((value, index) => ({
+      return this.values.map((value) => ({
         label: value.replace(/^./, value[0].toUpperCase()),
-        active: index === this.activeIndex,
+        active: value === this.selected,
       }));
     },
   },

@@ -17,7 +17,7 @@ export default {
   computed: {
     races: function () {
       console.log(this.$store);
-      return this.$store.state.races.map((race) => ({
+      return this.$store.getters.activeRaces.map((race) => ({
         ...race,
         secondsRemaining: Math.round(Math.random() * 300),
       }));

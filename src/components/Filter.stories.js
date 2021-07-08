@@ -16,5 +16,5 @@ const Template = (args) => ({
 export const Default = Template.bind({});
 Default.args = {
   values: ["horse", "harness", "greyhound"],
-  activeIndex: 1,
+  selected: "horse",
 };

@@ -3,7 +3,7 @@
     <h2>Next Races</h2>
     <div class="filter">
       <span class="filter-label">Category</span>
-      <Filter v-bind:values="values" v-bind:activeIndex="activeIndex" />
+      <Filter v-bind:values="values" v-bind:selected="selected" />
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   components: { Filter },
   data: function () {
     return {
-      activeIndex: 1,
+      selected: "horse",
       values: ["horse", "harness", "greyhound"],
     };
   },
