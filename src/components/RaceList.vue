@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="race-list">
     <RaceItem
       v-for="race in sortedRaces"
       :key="race.meetingName"
       v-bind="race"
+      class="test"
     />
   </div>
 </template>
@@ -30,4 +31,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.race-item:not(:last-child) {
+  border-bottom: 1px solid var(--color-primary-muted);
+}
+</style>
