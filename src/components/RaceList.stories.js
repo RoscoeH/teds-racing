@@ -5,6 +5,9 @@ import store from "../store";
 
 app.use(store);
 store.dispatch("loadRaces");
+setInterval(() => {
+  store.dispatch("loadRaces");
+}, 2 * 60 * 1000);
 
 export default {
   title: "Components/RaceList",

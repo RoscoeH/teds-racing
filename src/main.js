@@ -7,4 +7,8 @@ import store from "./store";
 
 store.dispatch("loadRaces");
 
+setInterval(() => {
+  store.dispatch("loadRaces");
+}, 10 * 1000);
+
 createApp(App).use(store).mount("#app");
