@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="race-item">
     <div class="meeting-name">
       {{ meetingName.toUpperCase() }}
       <span class="race-number">R{{ raceNumber }}</span>
@@ -25,7 +25,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.meeting-name {
-  color: blue;
+.race-item {
+  color: var(--color-text);
+}
+
+.race-number {
+  color: var(--color-primary);
 }
 </style>
