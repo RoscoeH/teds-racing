@@ -9,6 +9,6 @@ header {
   align-items: center;
   color: var(--color-background);
   background-color: var(--color-primary);
-  height: var(--space-5);
+  height: var(--space-6);
 }
 </style>

@@ -56,7 +56,7 @@ export default {
   display: flex;
   justify-content: space-between;
   color: var(--color-text);
-  padding: var(--space-2) var(--space-1);
+  padding: var(--space-3) var(--space-1);
   cursor: pointer;
 }
 
