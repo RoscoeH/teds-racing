@@ -3,7 +3,11 @@
     <h2>Next Races</h2>
     <div class="filter">
       <span class="filter-label">Category</span>
-      <Filter v-bind:values="values" v-bind:selected="selected" />
+      <Filter
+        v-bind:values="values"
+        v-bind:selected="selected"
+        @on-select="handleOnSelect"
+      />
     </div>
   </div>
 </template>
@@ -18,6 +22,11 @@ export default {
       selected: "horse",
       values: ["horse", "harness", "greyhound"],
     };
+  },
+  methods: {
+    handleOnSelect: function (value) {
+      this.selected = value;
+    },
   },
 };
 </script>

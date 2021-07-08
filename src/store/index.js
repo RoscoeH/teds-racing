@@ -23,9 +23,7 @@ export default createStore({
   },
   actions: {
     async loadRaces({ commit }) {
-      console.log("load");
       commit("replaceRaces", await fetchRaces());
-      console.log("loaded");
     },
   },
   modules: {},

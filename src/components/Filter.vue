@@ -6,6 +6,7 @@
       :key="item.label"
       v-bind:label="item.label"
       v-bind:isActive="item.active"
+      @click="handleFilterClick(item.value)"
     />
   </div>
 </template>
@@ -31,7 +32,13 @@ export default {
       return this.values.map((value) => ({
         label: value.replace(/^./, value[0].toUpperCase()),
         active: value === this.selected,
+        value,
       }));
+    },
+  },
+  methods: {
+    handleFilterClick: function (value) {
+      this.$emit("on-select", value);
     },
   },
 };
