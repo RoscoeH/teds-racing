@@ -25,9 +25,24 @@ export default {
   --space-2: 16px;
   --space-3: 32px;
   --space-4: 64px;
+  --font-size-0: 16px;
+  --font-size-1: 18px;
+  --font-size-2: 24px;
+  --font-size-3: 48px;
 }
 
 html {
   font-family: "Work Sans", sans-serif;
+}
+
+h1 {
+  font-size: var(--font-size-3);
+  font-weight: bold;
+  font-style: italic;
+}
+
+h2 {
+  font-size: var(--font-size-2);
+  font-weight: bold;
 }
 </style>
