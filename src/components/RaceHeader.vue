@@ -26,6 +26,7 @@ export default {
 .race-header {
   display: flex;
   flex-direction: column;
+  margin-bottom: var(--space-1);
 }
 
 @media only screen and (min-width: 480px) {
