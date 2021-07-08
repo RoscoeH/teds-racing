@@ -1,13 +1,16 @@
 <template>
+  <AppHeader />
   <RaceItem meetingName="Capalaba" raceNumber="5" />
 </template>
 
 <script>
+import AppHeader from "./components/AppHeader.vue";
 import RaceItem from "./components/RaceItem.vue";
 
 export default {
   name: "App",
   components: {
+    AppHeader,
     RaceItem,
   },
 };
@@ -25,6 +28,7 @@ export default {
   --space-2: 16px;
   --space-3: 32px;
   --space-4: 64px;
+  --space-5: 72px;
   --font-size-0: 16px;
   --font-size-1: 18px;
   --font-size-2: 24px;
