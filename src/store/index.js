@@ -1,5 +1,9 @@
 import { createStore } from "vuex";
 
+import { fetchRaces } from "../core/data";
+
+console.log(fetchRaces().then((res) => console.log(res)));
+
 export default createStore({
   state: {
     races: [
