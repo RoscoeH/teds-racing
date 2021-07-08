@@ -4,6 +4,11 @@
   --color-text: #333333;
   --color-primary-muted: rgba(40, 58, 217, 0.15);
   --color-text-muted: #595959;
+  --color-hover: rgba(0, 0, 0, 0.05);
+  --color-time-0: #f20089;
+  --color-time-1: #e60026;
+  --color-time-2: #ec6008;
+  --color-time-3: #ffaa00;
   --space-0: 4px;
   --space-1: 8px;
   --space-2: 16px;
