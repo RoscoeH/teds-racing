@@ -1,5 +1,5 @@
 export const CATEGORY = {
-  HORSE: 0,
-  HARNESS: 1,
-  GREYHOUND: 2,
+  HORSE: "horse",
+  HARNESS: "harness",
+  GREYHOUND: "greyhound",
 };

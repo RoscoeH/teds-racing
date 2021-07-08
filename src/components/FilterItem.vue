@@ -23,6 +23,7 @@ button {
   font-size: var(--font-size-0);
   font-weight: bold;
   border-radius: 999px;
+  box-sizing: border-box;
 }
 button:hover {
   color: var(--color-text);
@@ -32,6 +33,9 @@ button:hover {
 .active {
   background-color: var(--color-primary);
   color: var(--color-background);
-  border: none;
+  border-color: var(--color-primary);
+}
+.active:hover {
+  color: var(--color-primary-muted);
 }
 </style>
