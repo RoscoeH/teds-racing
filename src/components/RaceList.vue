@@ -1,31 +1,36 @@
 <template>
   <div class="race-list">
-    <RaceItem
-      v-for="race in sortedRaces"
-      :key="race.meetingName"
-      v-bind="race"
-      class="test"
-    />
+    <RaceItem v-for="race in races" :key="race.meetingName" v-bind="race" />
   </div>
 </template>
 
 <script>
+import { currentTimeInSeconds } from "../core/utils";
 import RaceItem from "./RaceItem";
 
 export default {
   components: { RaceItem },
+  data() {
+    return {
+      now: currentTimeInSeconds(),
+    };
+  },
+  created() {
+    this.interval = setInterval(() => {
+      this.now = currentTimeInSeconds();
+    });
+  },
+  beforeUnmount() {
+    clearInterval(this.interval);
+  },
   computed: {
     races: function () {
-      console.log(this.$store);
-      return this.$store.getters.activeRaces.map((race) => ({
-        ...race,
-        secondsRemaining: Math.round(Math.random() * 300),
-      }));
-    },
-    sortedRaces: function () {
-      return this.races
-        .slice()
-        .sort((a, b) => a.secondsRemaining - b.secondsRemaining);
+      return this.$store.getters.activeRaces
+        .map((race) => ({
+          ...race,
+          secondsRemaining: race.advertisedStart - this.now,
+        }))
+        .slice(0, 5);
     },
   },
 };

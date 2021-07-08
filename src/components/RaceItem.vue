@@ -32,12 +32,12 @@ export default {
   },
   computed: {
     minutesRemaining: function () {
-      return Math.floor(this.secondsRemaining / 60);
+      return Math.floor(Math.abs(this.secondsRemaining) / 60);
     },
     timeRemaining: function () {
       const seconds = this.secondsRemaining % 60;
       return `${
-        this.minutesRemaining ? `${this.minutesRemaining}m ` : ""
+        this.minutesRemaining > 0 ? `${this.minutesRemaining}m ` : ""
       }${seconds}s`;
     },
     timeColorIndex: function () {

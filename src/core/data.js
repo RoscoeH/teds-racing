@@ -21,7 +21,6 @@ function mapCategory(categoryId) {
 }
 
 function mapRaces([, race]) {
-  console.log(race);
   return {
     meetingName: race.meeting_name,
     raceNumber: race.race_number,
@@ -44,6 +43,6 @@ function transformResponse(response) {
 
 export function fetchRaces() {
   return axios
-    .get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=10")
+    .get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50")
     .then(transformResponse);
 }

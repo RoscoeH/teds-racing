@@ -4,6 +4,7 @@ import RaceList from "./RaceList";
 import store from "../store";
 
 app.use(store);
+store.dispatch("loadRaces");
 
 export default {
   title: "Components/RaceList",
