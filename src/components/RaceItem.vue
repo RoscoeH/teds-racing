@@ -66,6 +66,7 @@ export default {
 
 .race-number {
   font-style: italic;
+  color: var(--color-text-muted);
 }
 
 .time-remaining {
