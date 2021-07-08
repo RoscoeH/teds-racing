@@ -28,7 +28,6 @@ export default {
   },
   computed: {
     items: function () {
-      console.log(this.values, this.activeIndex);
       return this.values.map((value, index) => ({
         label: value.replace(/^./, value[0].toUpperCase()),
         active: index === this.activeIndex,
