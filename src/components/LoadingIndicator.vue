@@ -4,17 +4,11 @@
       <div class="dummy-race-name">
         <div
           class="dummy-text"
-          v-bind:style="{ width: `${random(5, 9) * characterWidth}px` }"
+          v-bind:style="{ width: randomTextWidth(5, 9) }"
         />
-        <div
-          class="dummy-text"
-          v-bind:style="{ width: `${2 * characterWidth}px` }"
-        />
+        <div class="dummy-text" v-bind:style="{ width: textWidth(2) }" />
       </div>
-      <div
-        class="dummy-text"
-        v-bind:style="{ width: `${random(3, 5) * characterWidth}px` }"
-      />
+      <div class="dummy-text" v-bind:style="{ width: randomTextWidth(3, 5) }" />
     </div>
   </div>
 </template>
@@ -32,6 +26,12 @@ export default {
   },
   methods: {
     random,
+    textWidth(numCharacters) {
+      return `${numCharacters * this.characterWidth}px`;
+    },
+    randomTextWidth(min, max) {
+      return this.textWidth(random(min, max));
+    },
   },
 };
 </script>
