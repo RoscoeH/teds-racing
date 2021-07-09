@@ -6,7 +6,7 @@
 export default {};
 </script>
 
-<style>
+<style scope>
 .error {
   background-color: var(--color-error-muted);
   color: var(--color-error);

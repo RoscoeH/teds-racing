@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @keyframes pulse {
   0% {
     opacity: 0.5;

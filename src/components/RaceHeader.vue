@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .race-header {
   display: flex;
   flex-direction: column;

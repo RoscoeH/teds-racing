@@ -2,7 +2,7 @@
   <header><h1>TEDS</h1></header>
 </template>
 
-<style>
+<style scoped>
 header {
   display: flex;
   justify-content: center;

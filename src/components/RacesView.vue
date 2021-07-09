@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .races-view {
   max-width: 640px;
   margin: 0 auto;

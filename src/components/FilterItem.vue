@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 button {
   padding: var(--space-1) var(--space-2);
   background-color: var(--color-background);

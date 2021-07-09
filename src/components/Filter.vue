@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .filter-item:not(:last-child) {
   margin-right: var(--space-1);
 }
