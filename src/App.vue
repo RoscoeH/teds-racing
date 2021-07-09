@@ -1,19 +1,20 @@
 <template>
-  <AppHeader />
-  <RaceItem meetingName="Capalaba" raceNumber="5" />
+  <RaceView />
 </template>
 
 <script>
-import AppHeader from "./components/AppHeader.vue";
-import RaceItem from "./components/RaceItem.vue";
+import RaceView from "./components/RacesView.vue";
 
 export default {
   name: "App",
   components: {
-    AppHeader,
-    RaceItem,
+    RaceView,
   },
 };
 </script>
 
-<style></style>
+<style>
+body {
+  margin: 0;
+}
+</style>
