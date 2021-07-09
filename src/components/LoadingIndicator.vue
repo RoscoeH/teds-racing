@@ -24,7 +24,7 @@ import { random } from "../core/utils";
 import { MAX_RACES } from "../core/const";
 
 export default {
-  data: function () {
+  data() {
     return {
       count: MAX_RACES,
       characterWidth: 14,

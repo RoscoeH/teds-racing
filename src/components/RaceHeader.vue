@@ -17,7 +17,7 @@ import Filter from "./Filter";
 
 export default {
   components: { Filter },
-  data: function () {
+  data() {
     return {
       values: ["horse", "harness", "greyhound"],
     };

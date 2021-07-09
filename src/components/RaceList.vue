@@ -18,7 +18,7 @@ import ErrorIndicator from "./ErrorIndicator.vue";
 
 export default {
   components: { RaceItem, LoadingIndicator, ErrorIndicator },
-  data: function () {
+  data() {
     return {
       now: currentTimeInSeconds(),
     };
