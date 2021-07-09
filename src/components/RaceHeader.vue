@@ -19,13 +19,17 @@ export default {
   components: { Filter },
   data: function () {
     return {
-      selected: "horse",
       values: ["horse", "harness", "greyhound"],
     };
   },
+  computed: {
+    selected: function () {
+      return this.$store.state.activeCategory;
+    },
+  },
   methods: {
     handleOnSelect: function (value) {
-      this.selected = value;
+      this.$store.commit("setActiveCategory", value);
     },
   },
 };

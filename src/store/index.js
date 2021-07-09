@@ -17,6 +17,9 @@ export default createStore({
         .slice(0, 5),
   },
   mutations: {
+    setActiveCategory(state, category) {
+      state.activeCategory = category;
+    },
     replaceRaces(state, newRaces) {
       state.races = newRaces;
     },
