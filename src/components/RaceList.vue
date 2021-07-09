@@ -1,6 +1,6 @@
 <template>
   <div class="race-list">
-    <RaceItem v-for="race in races" :key="race.meetingName" v-bind="race" />
+    <RaceItem v-for="race in races" :key="race.key" v-bind="race" />
   </div>
 </template>
 
@@ -25,12 +25,11 @@ export default {
   },
   computed: {
     races: function () {
-      return this.$store.getters.activeRaces
-        .map((race) => ({
-          ...race,
-          secondsRemaining: race.advertisedStart - this.now,
-        }))
-        .slice(0, 5);
+      return this.$store.getters.activeRaces.map((race) => ({
+        ...race,
+        secondsRemaining: race.advertisedStart - this.now,
+        key: `${race.category}-${race.meetingName}-${race.raceNumber}`,
+      }));
     },
   },
 };

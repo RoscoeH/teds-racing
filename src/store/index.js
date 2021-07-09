@@ -12,7 +12,11 @@ export default createStore({
   getters: {
     activeRaces: (state) =>
       state.races
-        .filter((race) => race.category === state.activeCategory)
+        .filter(
+          (race) =>
+            state.activeCategory === null ||
+            race.category === state.activeCategory
+        )
         .filter((race) => race.advertisedStart - currentTimeInSeconds() >= -60)
         .slice(0, 5),
   },
@@ -26,7 +30,8 @@ export default createStore({
   },
   actions: {
     async loadRaces({ commit }) {
-      commit("replaceRaces", await fetchRaces());
+      const races = await fetchRaces();
+      commit("replaceRaces", races);
     },
   },
   modules: {},

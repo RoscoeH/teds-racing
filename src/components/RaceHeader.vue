@@ -29,7 +29,10 @@ export default {
   },
   methods: {
     handleOnSelect: function (value) {
-      this.$store.commit("setActiveCategory", value);
+      // Remove filter if it's already active
+      const categoryFilter = value === this.selected ? null : value;
+
+      this.$store.commit("setActiveCategory", categoryFilter);
     },
   },
 };
