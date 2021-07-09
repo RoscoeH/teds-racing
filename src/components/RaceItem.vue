@@ -4,10 +4,7 @@
       {{ meetingName.toUpperCase() }}
       <span class="race-number">R{{ raceNumber }}</span>
     </div>
-    <div
-      class="time-remaining"
-      v-bind:style="{ color: `var(--color-time-${timeColorIndex})` }"
-    >
+    <div class="time-remaining" v-bind:class="timeClass">
       {{ timeRemaining }}
     </div>
   </div>
@@ -41,15 +38,22 @@ export default {
     /** Returns the time remaining in the format "<minutes>m <seconds>s".  */
     timeRemaining: function () {
       const seconds = this.secondsRemaining % 60;
-      return `${this.minutes > 0 ? `${this.minutes}m ` : ""}${seconds}s`;
+      const minutes = this.secondsRemaining >= 0 ? this.minutes : -this.minutes;
+      const displaySeconds =
+        this.secondsRemaining > -60 || minutes > 0 ? seconds : -seconds;
+      const displayMinutes = this.minutes > 0 ? `${minutes}m ` : "";
+      return `${displayMinutes}${displaySeconds}s`;
     },
     /** Returns the index of the time's color depending on the number of minutes remaining */
-    timeColorIndex: function () {
-      if (this.secondsRemaining < 0) return 0;
-      if (this.minutes < 1) return 1;
-      if (this.minutes < 3) return 2;
-      if (this.minutes < 5) return 3;
-      return "hover";
+    timeColor: function () {
+      if (this.secondsRemaining < 0) return "pink";
+      if (this.minutes < 1) return "red";
+      if (this.minutes < 3) return "orange";
+      if (this.minutes < 5) return "yellow";
+      return null;
+    },
+    timeClass: function () {
+      return this.timeColor ? `time-color-${this.timeColor}` : "";
     },
   },
 };
@@ -64,6 +68,7 @@ export default {
   cursor: pointer;
   font-size: var(--font-size-1);
   line-height: 1em;
+  max-width: 720px;
 }
 
 .race-item:hover {

@@ -7,10 +7,10 @@
   --color-error-muted: #fbd9df;
   --color-text-muted: #595959;
   --color-hover: rgba(0, 0, 0, 0.05);
-  --color-time-0: #f20089;
-  --color-time-1: #e60026;
-  --color-time-2: #ec6008;
-  --color-time-3: #ffaa00;
+  --color-time-pink: #f20089;
+  --color-time-red: #e60026;
+  --color-time-orange: #ec6008;
+  --color-time-yellow: #ffaa00;
   --space-0: 4px;
   --space-1: 8px;
   --space-2: 12px;
@@ -38,4 +38,20 @@ h2 {
   font-size: var(--font-size-2);
   font-weight: bold;
   margin: var(--space-3) 0 var(--space-3);
+}
+
+.time-color-pink {
+  color: var(--color-time-pink);
+}
+
+.time-color-red {
+  color: var(--color-time-red);
+}
+
+.time-color-orange {
+  color: var(--color-time-orange);
+}
+
+.time-color-yellow {
+  color: var(--color-time-yellow);
 }
