@@ -71,8 +71,6 @@ describe("RaceItem", () => {
       });
       const time = wrapper.find(".time-remaining");
 
-      console.log(time.element.style);
-
       expect(time.attributes().class).not.toContain("time-color");
     });
 

@@ -43,7 +43,6 @@ function transformResponse(response) {
 
 async function fetchRaces() {
   const response = await axios.get("/.netlify/functions/fetchRaces");
-  console.log(response);
   return response.data;
 }
 

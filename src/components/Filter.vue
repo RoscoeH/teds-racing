@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { capitalize } from "vue";
 import FilterItem from "./FilterItem";
 export default {
   components: { FilterItem },
@@ -33,7 +34,7 @@ export default {
     items: function () {
       // Map filter value into object with display label and active state
       return this.values.map((value) => ({
-        label: value.replace(/^./, value[0].toUpperCase()),
+        label: capitalize(value),
         active: value === this.selected,
         value,
       }));
