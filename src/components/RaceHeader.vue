@@ -63,7 +63,7 @@ export default {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 560px) {
   .filter-label {
     display: none;
   }

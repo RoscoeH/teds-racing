@@ -64,12 +64,20 @@ export default {
   background-color: var(--color-hover);
 }
 
+.meeting-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: var(--space-3);
+}
+
 .race-number {
   font-style: italic;
   color: var(--color-text-muted);
 }
 
 .time-remaining {
+  white-space: nowrap;
   font-weight: bold;
 }
 </style>

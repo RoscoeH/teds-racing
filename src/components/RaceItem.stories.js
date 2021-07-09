@@ -47,3 +47,10 @@ Overdue.args = {
   raceNumber: 6,
   secondsRemaining: -99,
 };
+
+export const ReallyLongMeetingName = Template.bind({});
+ReallyLongMeetingName.args = {
+  meetingName: "Really long meeting name",
+  raceNumber: 6,
+  secondsRemaining: 88,
+};
