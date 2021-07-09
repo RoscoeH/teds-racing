@@ -1,11 +1,11 @@
-import axios from "axios";
-
-import {
+const axios = require("axios");
+const CONST = require("../core/const");
+const {
   CATEGORY,
   CATEGORY_HORSE_ID,
   CATEGORY_HARNESS_ID,
   CATEGORY_GREYHOUND_ID,
-} from "../core/const";
+} = CONST;
 
 function mapCategory(categoryId) {
   switch (categoryId) {
@@ -41,9 +41,10 @@ function transformResponse(response) {
     .sort(compareRaces);
 }
 
-export async function fetchRaces() {
-  const response = await axios.get(
-    "https://api.neds.com.au/rest/v1/rasdfsdcing/?method=nextraces&count=50"
-  );
-  return transformResponse(response);
+async function fetchRaces() {
+  const response = await axios.get("/.netlify/functions/fetchRaces");
+  console.log(response);
+  return response.data;
 }
+
+module.exports = { transformResponse, fetchRaces };

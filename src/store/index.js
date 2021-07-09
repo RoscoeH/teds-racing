@@ -43,6 +43,7 @@ export default createStore({
         commit("replaceRaces", races);
         commit("setError", false);
       } catch (error) {
+        console.error(error);
         commit("setError", true);
       }
       commit("setLoading", false);
