@@ -16,9 +16,11 @@ import FilterItem from "./FilterItem";
 export default {
   components: { FilterItem },
   props: {
+    /** Selected filter value */
     selected: {
       type: String,
     },
+    /** Array of possible filter values */
     values: {
       type: Array,
       required: true,
@@ -29,6 +31,7 @@ export default {
   },
   computed: {
     items: function () {
+      // Map filter value into object with display label and active state
       return this.values.map((value) => ({
         label: value.replace(/^./, value[0].toUpperCase()),
         active: value === this.selected,
@@ -38,6 +41,9 @@ export default {
   },
   methods: {
     handleFilterClick: function (value) {
+      /**
+       * Filter selected event
+       */
       this.$emit("on-select", value);
     },
   },

@@ -17,29 +17,33 @@
 export default {
   name: "RaceItem",
   props: {
+    /** The meeting-name of the race */
     meetingName: {
       type: String,
       required: true,
     },
+    /** The race number */
     raceNumber: {
       type: Number,
       required: true,
     },
+    /** Number of seconds remaining before race start */
     secondsRemaining: {
       type: Number,
       required: true,
     },
   },
   computed: {
-    minutesRemaining: function () {
+    /** Returns the number of minutes in the time */
+    minutes: function () {
       return Math.floor(Math.abs(this.secondsRemaining) / 60);
     },
+    /** Returns the time remaining in the format "<minutes>m <seconds>s".  */
     timeRemaining: function () {
       const seconds = this.secondsRemaining % 60;
-      return `${
-        this.minutesRemaining > 0 ? `${this.minutesRemaining}m ` : ""
-      }${seconds}s`;
+      return `${this.minutes > 0 ? `${this.minutes}m ` : ""}${seconds}s`;
     },
+    /** Returns the index of the time's color depending on the number of minutes remaining */
     timeColorIndex: function () {
       if (this.minutesRemaining < 0) return 0;
       if (this.minutesRemaining < 1) return 1;

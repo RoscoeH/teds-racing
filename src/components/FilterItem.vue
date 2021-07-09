@@ -5,10 +5,12 @@
 <script>
 export default {
   props: {
+    /** The display label of the filter item */
     label: {
       type: String,
       required: true,
     },
+    /** Controls the active state of the filter item */
     isActive: Boolean,
   },
 };

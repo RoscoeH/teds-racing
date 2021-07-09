@@ -16,6 +16,7 @@ export default {
     };
   },
   created() {
+    // Every second, calculate the current time in seconds
     this.interval = setInterval(() => {
       this.now = currentTimeInSeconds();
     });
@@ -25,6 +26,7 @@ export default {
   },
   computed: {
     races: function () {
+      // Map each race to calculate a unique key and the seconds remaining
       return this.$store.getters.activeRaces.map((race) => ({
         ...race,
         secondsRemaining: race.advertisedStart - this.now,
