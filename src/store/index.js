@@ -1,11 +1,12 @@
 import { createStore } from "vuex";
-import { CATEGORY } from "../core/const";
 
+import { CATEGORY, MAX_RACES } from "../core/const";
 import { fetchRaces } from "../core/data";
 import { currentTimeInSeconds } from "../core/utils";
 
 export default createStore({
   state: {
+    isLoading: true,
     activeCategory: CATEGORY.HORSE,
     races: [],
   },
@@ -18,9 +19,12 @@ export default createStore({
             race.category === state.activeCategory
         )
         .filter((race) => race.advertisedStart - currentTimeInSeconds() >= -60)
-        .slice(0, 5),
+        .slice(0, MAX_RACES),
   },
   mutations: {
+    setLoading(state, isLoading) {
+      state.isLoading = isLoading;
+    },
     setActiveCategory(state, category) {
       state.activeCategory = category;
     },
@@ -32,6 +36,7 @@ export default createStore({
     async loadRaces({ commit }) {
       const races = await fetchRaces();
       commit("replaceRaces", races);
+      commit("setLoading", false);
     },
   },
   modules: {},

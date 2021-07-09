@@ -45,10 +45,10 @@ export default {
     },
     /** Returns the index of the time's color depending on the number of minutes remaining */
     timeColorIndex: function () {
-      if (this.minutesRemaining < 0) return 0;
-      if (this.minutesRemaining < 1) return 1;
-      if (this.minutesRemaining < 3) return 2;
-      if (this.minutesRemaining < 5) return 3;
+      if (this.secondsRemaining < 0) return 0;
+      if (this.minutes < 1) return 1;
+      if (this.minutes < 3) return 2;
+      if (this.minutes < 5) return 3;
       return "hover";
     },
   },
@@ -62,6 +62,8 @@ export default {
   color: var(--color-text);
   padding: var(--space-3) var(--space-1);
   cursor: pointer;
+  font-size: var(--font-size-1);
+  line-height: 1em;
 }
 
 .race-item:hover {
