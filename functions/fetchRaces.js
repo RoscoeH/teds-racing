@@ -1,12 +1,12 @@
 const axios = require("axios");
+const CONST = require("../src/core/const");
 const data = require("../src/core/data");
+const { API_ENDPOINT } = CONST;
 const { transformResponse } = data;
 
 exports.handler = async () => {
   try {
-    const response = await axios.get(
-      "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50"
-    );
+    const response = await axios.get(API_ENDPOINT);
     const payload = transformResponse(response);
 
     return {
