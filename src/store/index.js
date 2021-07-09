@@ -6,6 +6,7 @@ import { currentTimeInSeconds } from "../core/utils";
 
 export default createStore({
   state: {
+    hasError: false,
     isLoading: true,
     activeCategory: CATEGORY.HORSE,
     races: [],
@@ -22,6 +23,9 @@ export default createStore({
         .slice(0, MAX_RACES),
   },
   mutations: {
+    setError(state, hasError) {
+      state.hasError = hasError;
+    },
     setLoading(state, isLoading) {
       state.isLoading = isLoading;
     },
@@ -34,8 +38,13 @@ export default createStore({
   },
   actions: {
     async loadRaces({ commit }) {
-      const races = await fetchRaces();
-      commit("replaceRaces", races);
+      try {
+        const races = await fetchRaces();
+        commit("replaceRaces", races);
+        commit("setError", false);
+      } catch (error) {
+        commit("setError", true);
+      }
       commit("setLoading", false);
     },
   },

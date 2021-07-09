@@ -41,8 +41,9 @@ function transformResponse(response) {
     .sort(compareRaces);
 }
 
-export function fetchRaces() {
-  return axios
-    .get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50")
-    .then(transformResponse);
+export async function fetchRaces() {
+  const response = await axios.get(
+    "https://api.neds.com.au/rest/v1/rasdfsdcing/?method=nextraces&count=50"
+  );
+  return transformResponse(response);
 }

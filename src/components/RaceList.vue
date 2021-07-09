@@ -1,7 +1,12 @@
 <template>
   <div class="race-list">
     <LoadingIndicator v-if="isLoading" />
-    <RaceItem v-for="race in races" :key="race.key" v-bind="race" />
+    <div v-else>
+      <ErrorIndicator v-if="hasError" />
+      <div v-else>
+        <RaceItem v-for="race in races" :key="race.key" v-bind="race" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,9 +14,10 @@
 import { currentTimeInSeconds } from "../core/utils";
 import RaceItem from "./RaceItem";
 import LoadingIndicator from "./LoadingIndicator.vue";
+import ErrorIndicator from "./ErrorIndicator.vue";
 
 export default {
-  components: { RaceItem, LoadingIndicator },
+  components: { RaceItem, LoadingIndicator, ErrorIndicator },
   data: function () {
     return {
       now: currentTimeInSeconds(),
@@ -29,6 +35,9 @@ export default {
   computed: {
     isLoading: function () {
       return this.$store.state.isLoading;
+    },
+    hasError: function () {
+      return this.$store.state.hasError;
     },
     races: function () {
       // Map each race to calculate a unique key and the seconds remaining
