@@ -19,7 +19,7 @@ export default createStore({
             state.activeCategory === null ||
             race.category === state.activeCategory
         )
-        .filter((race) => race.advertisedStart - currentTimeInSeconds() >= -60)
+        .filter((race) => race.advertisedStart - currentTimeInSeconds() > -60)
         .slice(0, MAX_RACES),
   },
   mutations: {
