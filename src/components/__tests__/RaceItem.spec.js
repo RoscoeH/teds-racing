@@ -1,4 +1,4 @@
-import { shallowMount, mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import RaceItem from "@/components/RaceItem.vue";
 
 const dummyRace = {
@@ -7,8 +7,8 @@ const dummyRace = {
   secondsRemaining: 10,
 };
 
-describe("RaceItem.vue", () => {
-  it("in uppercase", () => {
+describe("RaceItem", () => {
+  it("renders meeting name in uppercase", () => {
     const wrapper = shallowMount(RaceItem, {
       props: dummyRace,
     });
@@ -66,7 +66,7 @@ describe("RaceItem.vue", () => {
     it("in default color when secondsRemaining is 5 minutes or more.", () => {
       const secondsRemaining = 5 * 60;
 
-      const wrapper = mount(RaceItem, {
+      const wrapper = shallowMount(RaceItem, {
         props: { ...dummyRace, secondsRemaining },
       });
       const time = wrapper.find(".time-remaining");
@@ -79,7 +79,7 @@ describe("RaceItem.vue", () => {
     it("in yellow when secondsRemaining is less than 5 minutes.", () => {
       const secondsRemaining = 4 * 60 + 30;
 
-      const wrapper = mount(RaceItem, {
+      const wrapper = shallowMount(RaceItem, {
         props: { ...dummyRace, secondsRemaining },
       });
       const time = wrapper.find(".time-remaining");
@@ -90,7 +90,7 @@ describe("RaceItem.vue", () => {
     it("in orange when secondsRemaining is less than 3 minutes.", () => {
       const secondsRemaining = 2 * 60 + 30;
 
-      const wrapper = mount(RaceItem, {
+      const wrapper = shallowMount(RaceItem, {
         props: { ...dummyRace, secondsRemaining },
       });
       const time = wrapper.find(".time-remaining");
@@ -101,7 +101,7 @@ describe("RaceItem.vue", () => {
     it("in red when secondsRemaining is less than 1 minute.", () => {
       const secondsRemaining = 30;
 
-      const wrapper = mount(RaceItem, {
+      const wrapper = shallowMount(RaceItem, {
         props: { ...dummyRace, secondsRemaining },
       });
       const time = wrapper.find(".time-remaining");
@@ -112,7 +112,7 @@ describe("RaceItem.vue", () => {
     it("in pink when secondsRemaining is negative.", () => {
       const secondsRemaining = -30;
 
-      const wrapper = mount(RaceItem, {
+      const wrapper = shallowMount(RaceItem, {
         props: { ...dummyRace, secondsRemaining },
       });
       const time = wrapper.find(".time-remaining");
