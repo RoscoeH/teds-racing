@@ -4,7 +4,7 @@
     <div v-else>
       <ErrorIndicator v-if="hasError" />
       <div v-else>
-        <RaceItem v-for="race in races" :key="race.key" v-bind="race" />
+        <RaceListItem v-for="race in races" :key="race.key" v-bind="race" />
       </div>
     </div>
   </div>
@@ -12,12 +12,12 @@
 
 <script>
 import { currentTimeInSeconds } from "../core/utils";
-import RaceItem from "./RaceItem";
+import RaceListItem from "./RaceListItem";
 import LoadingIndicator from "./LoadingIndicator.vue";
 import ErrorIndicator from "./ErrorIndicator.vue";
 
 export default {
-  components: { RaceItem, LoadingIndicator, ErrorIndicator },
+  components: { RaceListItem, LoadingIndicator, ErrorIndicator },
   data() {
     return {
       now: currentTimeInSeconds(),
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style scoped>
-.race-item:not(:last-child) {
+.race-list-item:not(:last-child) {
   border-bottom: 1px solid var(--color-primary-muted);
 }
 </style>

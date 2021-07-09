@@ -1,16 +1,16 @@
-import RaceItem from "./RaceItem";
+import RaceListItem from "./RaceListItem";
 
 export default {
-  title: "Components/RaceItem",
-  component: RaceItem,
+  title: "Components/RaceListItem",
+  component: RaceListItem,
 };
 
 const Template = (args) => ({
-  components: { RaceItem },
+  components: { RaceListItem },
   setup() {
     return { args };
   },
-  template: '<RaceItem v-bind="args" />',
+  template: '<RaceListItem v-bind="args" />',
 });
 
 export const Default = Template.bind({});

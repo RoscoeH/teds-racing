@@ -1,5 +1,5 @@
 <template>
-  <div class="race-item">
+  <div class="race-list-item">
     <div class="meeting-name">
       {{ meetingName.toUpperCase() }}
       <span class="race-number">R{{ raceNumber }}</span>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "RaceItem",
+  name: "RaceListItem",
   props: {
     /** The meeting-name of the race */
     meetingName: {
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style scoped>
-.race-item {
+.race-list-item {
   display: flex;
   justify-content: space-between;
   color: var(--color-text);
@@ -71,7 +71,7 @@ export default {
   max-width: 720px;
 }
 
-.race-item:hover {
+.race-list-item:hover {
   background-color: var(--color-hover);
 }
 
