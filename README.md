@@ -1,6 +1,6 @@
 # TEDS RACING
 
-### [LiveDemo](https://teds-racing.netlify.app)
+### [Live Demo](https://teds-racing.netlify.app)
 
 ### [Design](https://www.figma.com/file/sJqRwQ6mppivBR5WAYZnrN/Teds-Betting?node-id=0%3A1)
 
