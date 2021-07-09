@@ -1,8 +1,10 @@
 <template>
-  <AppHeader />
   <div class="races-view">
-    <RaceHeader />
-    <RaceList />
+    <AppHeader />
+    <div class="content">
+      <RaceHeader />
+      <RaceList />
+    </div>
   </div>
 </template>
 
@@ -18,6 +20,21 @@ export default {
 
 <style>
 .races-view {
-  padding: var(--space-3) var(--space-3) 0;
+  max-width: 640px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.content {
+  padding: var(--space-3) var(--space-3);
+}
+
+@media only screen and (min-width: 640px) {
+  .races-view {
+    box-shadow: 0px 0px 32px 0px var(--color-primary-muted);
+  }
+  .content {
+    padding: var(--space-4) var(--space-4);
+  }
 }
 </style>
