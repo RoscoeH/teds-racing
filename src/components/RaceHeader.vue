@@ -4,8 +4,8 @@
     <div class="filter">
       <span class="filter-label">Category</span>
       <Filter
-        v-bind:values="values"
-        v-bind:selected="selected"
+        :values="values"
+        :selected="selected"
         @on-select="handleOnSelect"
       />
     </div>

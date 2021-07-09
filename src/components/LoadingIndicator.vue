@@ -2,13 +2,10 @@
   <div class="loading-indicator">
     <div class="item" v-for="(item, index) in count" :key="index">
       <div class="dummy-race-name">
-        <div
-          class="dummy-text"
-          v-bind:style="{ width: randomTextWidth(5, 9) }"
-        />
-        <div class="dummy-text" v-bind:style="{ width: textWidth(2) }" />
+        <div class="dummy-text" :style="{ width: randomTextWidth(5, 9) }" />
+        <div class="dummy-text" :style="{ width: textWidth(2) }" />
       </div>
-      <div class="dummy-text" v-bind:style="{ width: randomTextWidth(3, 5) }" />
+      <div class="dummy-text" :style="{ width: randomTextWidth(3, 5) }" />
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <button v-bind:class="{ active: isActive }">{{ label }}</button>
+  <button :class="{ active: isActive }">{{ label }}</button>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
       {{ meetingName.toUpperCase() }}
       <span class="race-number">R{{ raceNumber }}</span>
     </div>
-    <div class="time-remaining" v-bind:class="timeClass">
+    <div class="time-remaining" :class="timeClass">
       {{ timeRemaining }}
     </div>
   </div>

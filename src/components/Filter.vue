@@ -4,8 +4,8 @@
       class="filter-item"
       v-for="item in items"
       :key="item.label"
-      v-bind:label="item.label"
-      v-bind:isActive="item.active"
+      :label="item.label"
+      :isActive="item.active"
       @click="handleFilterClick(item.value)"
     />
   </div>
