@@ -9,6 +9,6 @@ store.dispatch("loadRaces");
 
 setInterval(() => {
   store.dispatch("loadRaces");
-}, 10 * 1000);
+}, 60 * 1000);
 
 createApp(App).use(store).mount("#app");
